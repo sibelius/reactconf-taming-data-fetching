@@ -48,13 +48,43 @@ export { default as theme } from './theme'
 
 ## What is Data Fetching?
 
+- It is the reading/retrieve of data from somewhere
+- You can fetch data from local storage (disk) or network storage (server)
+
+---
+
+## Network Data Fetching Example
+
+<Img src='./img/request.png' width={500} />
+
 ---
 
 ## Why we need Data Fetching?
 
+- We can't keep all app data in memory
+- We can't download all app user data locally
+- We just want to fetch data we going to need
+
 ---
 
 ## Why is it hard?
+
+- We don't want to overfetch (bring more data that we need)
+- We don't want to underfetch (bring less data that we need)
+---
+
+## Why is it hard?
+
+- We need to know from where we can get the data we need
+- We can have more then one "endpoint" to get the data
+- We want to cache data already fetched, so we don't waste network usage
+---
+
+## Imperative Data Fetching
+
+---
+
+## Declarative Data Fetching
 
 ---
 
