@@ -1,0 +1,85 @@
+import { Head, Image, Appear } from 'mdx-deck'
+import { Split, FullScreenCode } from 'mdx-deck/layouts'
+import { CodeSurfer } from "mdx-deck-code-surfer";
+
+import { Cover } from './Cover';
+import { Intro } from './Intro';
+import { Img } from './Img';
+import { InlineImg } from './InlineImg';
+import { Thanks } from './Thanks';
+import { Feedback } from './Feedback';
+
+export { default as theme } from './theme'
+
+<Head>
+  <title>Taming Data Fetching</title>
+</Head>
+
+<Cover />
+
+---
+
+<Intro />
+
+---
+
+## Overview
+
+<ul>
+    <Appear>
+        <li>
+            Motivation
+        </li>
+        <li>
+            History/Evolution
+        </li>
+    </Appear>
+</ul>
+
+---
+
+## Motivation
+
+- What is Data Fetching?
+- Why we need Data Fetching?
+- Why is it hard?
+
+---
+
+## What is Data Fetching?
+
+---
+
+## Why we need Data Fetching?
+
+---
+
+## Why is it hard?
+
+---
+
+### What's Next?
+
+- Stable React Suspense Concurrent Mode
+
+---
+
+## References
+
+- [Distributed State](https://dev.to/mattkrick/distributed-state-101-why-i-forked-facebook-s-relay-1p7d)
+- [Linear Publish Queue](https://github.com/mattkrick/relay-linear-publish-queue)
+- [Fresh Concurrent React](https://github.com/sw-yx/fresh-concurrent-react/)
+- [Suspense and Concurrent Mode](https://dev.to/pomber/about-react-suspense-and-concurrent-mode-21aj)
+- [Concurrent Rendering in React - ReactConf 2018](https://www.youtube.com/watch?v=ByBPyMBTzM0&feature=youtu.be&t=1312)
+- [Moving To React Suspense](https://www.youtube.com/watch?v=SCQgE4mTnjU)
+- [Beyond React 16](https://www.youtube.com/watch?v=nLF0n9SACd4)
+- [REST hooks](https://resthooks.io/)
+- [Poor man's algebraic effects](https://mobile.twitter.com/sebmarkbage/status/941214259505119232)
+
+---
+
+<Thanks />
+
+---
+
+<Feedback />
