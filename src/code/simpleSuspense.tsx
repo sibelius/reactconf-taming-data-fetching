@@ -5,7 +5,7 @@ const resource = unstable_createResource(
 );
 
 const App = (props) => {
-  const input = props.resource.read(fixedID);
+  const input = resource.read(fixedID);
 
   return <span>{JSON.stringify(input)}</span>;
 };

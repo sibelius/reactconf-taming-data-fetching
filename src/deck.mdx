@@ -112,19 +112,172 @@ export { default as theme } from './theme'
 ## History/Evolution
 
 - componentDidMount
-- useEffect hook
 - Redux Thunk
 - Redux Saga
+- useEffect hook
 - Relay HOCs
 - Suspense
 - Relay hooks + Suspense
 
 ---
 
+## ComponentDidMount
+
+<Img src='./img/componentDidMount.png' width={500} />
+
+---
+
+## ComponentDidMount drawbacks
+- class api
+- data fetching logic spread on component lifecycles
+- imperative api
+- render then fetch (request waterfall)
+
+---
+
 ## Request Waterfall
 
-- You first fetch code (code split),
+- You first fetch code (code split)
 - then you fetch data
+
+---
+
+## Request Waterfall
+
+<Img src='./img/requestWaterfall.png' width={1100} />
+
+---
+
+## Redux Thunk
+
+<Img src='./img/reduxThunk.png' width={300} />
+
+---
+
+## Redux Thunk drawbacks
+- imperative api
+- hard to sync loading state with component
+
+---
+
+## Redux Saga
+
+<Img src='./img/reduxSaga.png' width={500} />
+
+---
+
+## Redux Saga drawbacks
+- same as Redux Thunk
+
+---
+
+## UseEffect
+
+<Img src='./img/useEffect.png' width={400} />
+
+---
+
+## UseEffect drawbacks
+
+- imperative api
+- keep state of loading, error, isMounted, fetch cancelling
+- hard to handle race conditions
+
+---
+
+## Data Fetching Race Conditions
+
+<Img src='./img/search.png' width={900} />
+
+---
+
+## Why Data Fetching Race Conditions happens?
+
+- network can be slow
+- backend could be under heavy load
+- user is typing too fast
+- you are unlucky
+- debounce is not enough
+
+---
+
+## How to "solve" Data Fetching Race Conditions
+
+- ignore responses from former api calls
+- cancel former api calls
+
+---
+
+## Relay HOCs
+
+<Img src='./img/relayHoc.png' width={700} />
+
+---
+
+## Relay HOCs
+
+- declarative data fetching
+- data components
+
+---
+
+## Relay fragments understanding
+
+<Img src='./img/dataRequirements.png' width={700} />
+
+---
+
+## Relay HOCs Drawbacks
+
+- HOC API - more "components" in the tree
+- render props API to handle loading and error state
+
+---
+
+## Suspense
+
+- React suspense is a way to let components suspend while loading/fetching code or data
+
+---
+
+## Suspense
+
+<Img src='./img/suspense.png' width={700} />
+
+---
+
+## Suspend on Code Loading
+
+<Img src='./img/lazy.png' width={900} />
+
+---
+
+## Suspense for Data Fetching
+
+<Img src='./img/simpleSuspense.png' width={600} />
+
+---
+
+## Suspense Resource
+
+<Img src='./img/suspenseResource.png' width={300} />
+
+---
+
+### Suspense Resource Pseudo Algorithm
+
+- Try to read entry from cache
+- If request is pending, throw promise (react will suspend the component)
+- If request is reject, throw error (error boundary will catch the error)
+- When request promise is resolved react will render again your component
+- Go back to first step
+
+---
+
+## Benefits of Suspense
+
+- it only shows Loading indicator when loading/fetch is slow enough
+- it "transforms" Async in Synchronous
 
 ---
 
@@ -138,6 +291,8 @@ export { default as theme } from './theme'
 ### What's Next?
 
 - Stable React Suspense Concurrent Mode
+- Stable Relay Modern Hooks
+- Stable Scheduler APIs
 
 ---
 
@@ -149,9 +304,19 @@ export { default as theme } from './theme'
 - [Suspense and Concurrent Mode](https://dev.to/pomber/about-react-suspense-and-concurrent-mode-21aj)
 - [Concurrent Rendering in React - ReactConf 2018](https://www.youtube.com/watch?v=ByBPyMBTzM0&feature=youtu.be&t=1312)
 - [Moving To React Suspense](https://www.youtube.com/watch?v=SCQgE4mTnjU)
+
+---
+
+## References
+
 - [Beyond React 16](https://www.youtube.com/watch?v=nLF0n9SACd4)
 - [REST hooks](https://resthooks.io/)
 - [Poor man's algebraic effects](https://mobile.twitter.com/sebmarkbage/status/941214259505119232)
+- [A Complete Guide to useEffect](https://overreacted.io/a-complete-guide-to-useeffect/)
+- [Handling API request race conditions in React](https://sebastienlorber.com/handling-api-request-race-conditions-in-react)
+- [Building the New Facebook](https://developers.facebook.com/videos/2019/building-the-new-facebookcom-with-react-graphql-and-relay/)
+- [Algebraic Effects](http://fibers-effects-react-rally.surge.sh/#/)
+- [React Suspense Netlify](https://www.netlify.com/blog/2018/10/18/react-suspense-with-netlify-functions/)
 
 ---
 
