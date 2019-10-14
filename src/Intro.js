@@ -94,7 +94,7 @@ export const Intro = () => (
       <EntriaLogo src={'./img/entriaLogo.png'} />
     </Center>
     <Flex flex={1} alignItems='center' justifyContent='center' mt={30}>
-      <MeName>Abstract Engineer</MeName>
+      <MeName>Abstraction Engineer</MeName>
     </Flex>
   </Root>
 );
